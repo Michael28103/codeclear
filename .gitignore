@@ -1,0 +1,17 @@
+# Secrets
+.env
+
+# Local environment
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Distribution / packaging
+*.egg-info/
+
+# Tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
