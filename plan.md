@@ -7,12 +7,13 @@ Pitch: a patient logs in, the app syncs their claims from a FHIR server, and exp
 Design note: sync code talks to a small `FhirClient` interface, so any FHIR R4 server (Blue Button 2.0, an EHR sandbox) can plug in later by adding an auth/token provider.
 
 ## Day 1: Foundations
-- [ ] `git init`, pyproject (ruff, mypy, pytest), pre-commit, Makefile
+- [x] `git init`, pyproject (ruff, mypy, pytest)
+- [ ] pre-commit, Makefile (optional)
 - [ ] README skeleton: problem, "what this does NOT do," disclaimer
-- [ ] Docker Compose: HAPI FHIR server + Postgres
-- [ ] Generate about 50 Synthea patients (Java 17 in Docker), load bundles into HAPI
-- [ ] Check the adjudication categories Synthea actually uses on EOB items; note them in `docs/fhir-mapping.md`
-- [ ] Save EOB bundles for 3 or 4 patients as test fixtures (include at least one denied or zero-paid line)
+- [x] Docker Compose: HAPI FHIR server + Postgres
+- [x] Generate about 50 Synthea patients (Java 21 in Docker), load bundles into HAPI
+- [x] Check the adjudication categories Synthea actually uses on EOB items; note them in `docs/fhir-mapping.md`
+- [x] Save EOB bundles for 3 patients as test fixtures (zero-paid and uninsured claims included; no denied lines in Synthea data, see `docs/fhir-mapping.md`)
 - Done when: `GET /fhir/ExplanationOfBenefit?patient=<id>` on local HAPI returns claims, and fixtures are committed
 
 ## Day 2: App auth and FHIR client
@@ -32,7 +33,8 @@ Design note: sync code talks to a small `FhirClient` interface, so any FHIR R4 s
 ## Day 4: Normalization and code tables
 - [ ] Map FHIR EOB to internal Pydantic models; document the field mapping in `docs/fhir-mapping.md`
 - [ ] Extract adjudication amounts: submitted, allowed, paid, deductible, coinsurance, patient responsibility
-- [ ] Code lookup for the systems Synthea uses (SNOMED CT, ICD-10-CM, HCPCS where present). Show CPT codes without AMA descriptions and note the licensing limit
+- [ ] Show the `display` text Synthea provides for each code (SNOMED CT, CVX, LOINC, CDT, RxNorm); code tables are only a fallback. Show CPT codes without AMA descriptions and note the licensing limit
+- [ ] Parse money as `Decimal` rounded to cents (Synthea emits values like `27.200000000000003`)
 - [ ] Tolerant parsing: missing fields, unknown codes, and unexpected extensions are logged and skipped, not crashes
 - Done when: every claim in the fixtures normalizes without errors and codes decode to plain English
 
