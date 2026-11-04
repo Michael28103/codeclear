@@ -1,0 +1,1179 @@
+{
+  "resourceType": "Bundle",
+  "id": "d535b91f-c802-4db7-b0dc-407ec7b2a8b0",
+  "meta": {
+    "lastUpdated": "2026-11-04T02:32:47.139+00:00"
+  },
+  "type": "searchset",
+  "link": [
+    {
+      "relation": "self",
+      "url": "http://localhost:8080/fhir/ExplanationOfBenefit?_count=5&patient=618"
+    },
+    {
+      "relation": "next",
+      "url": "http://localhost:8080/fhir?_getpages=d535b91f-c802-4db7-b0dc-407ec7b2a8b0&_getpagesoffset=5&_count=5&_pretty=true&_bundletype=searchset"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "http://localhost:8080/fhir/ExplanationOfBenefit/624",
+      "resource": {
+        "resourceType": "ExplanationOfBenefit",
+        "id": "624",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-11-04T02:23:31.146+00:00",
+          "source": "#i5RvnCxgWwkLp0gM"
+        },
+        "contained": [
+          {
+            "resourceType": "ServiceRequest",
+            "id": "referral",
+            "status": "completed",
+            "intent": "order",
+            "subject": {
+              "reference": "Patient/618"
+            },
+            "requester": {
+              "reference": "Practitioner/536"
+            },
+            "performer": [
+              {
+                "reference": "Practitioner/536"
+              }
+            ]
+          },
+          {
+            "resourceType": "Coverage",
+            "id": "coverage",
+            "status": "active",
+            "type": {
+              "text": "Humana"
+            },
+            "beneficiary": {
+              "reference": "Patient/618"
+            },
+            "payor": [
+              {
+                "display": "Humana"
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "system": "https://bluebutton.cms.gov/resources/variables/clm_id",
+            "value": "922fb35e-148d-9e82-3573-5eb4ec6c6b58"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/identifier/claim-group",
+            "value": "99999999999"
+          }
+        ],
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+              "code": "professional"
+            }
+          ]
+        },
+        "use": "claim",
+        "patient": {
+          "reference": "Patient/618"
+        },
+        "billablePeriod": {
+          "start": "1995-01-24T03:03:43+00:00",
+          "end": "1996-01-24T03:03:43+00:00"
+        },
+        "created": "1995-01-24T03:03:43+00:00",
+        "insurer": {
+          "display": "Humana"
+        },
+        "provider": {
+          "reference": "Practitioner/536"
+        },
+        "referral": {
+          "reference": "#referral"
+        },
+        "facility": {
+          "reference": "Location/228",
+          "display": "WHITTIER REHABILITATION HOSPITAL - BRADFORD"
+        },
+        "claim": {
+          "reference": "Claim/623"
+        },
+        "outcome": "complete",
+        "careTeam": [
+          {
+            "sequence": 1,
+            "provider": {
+              "reference": "Practitioner/536"
+            },
+            "role": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+                  "code": "primary",
+                  "display": "Primary provider"
+                }
+              ]
+            }
+          }
+        ],
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisReference": {
+              "reference": "Condition/620"
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                    "code": "principal"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "insurance": [
+          {
+            "focal": true,
+            "coverage": {
+              "reference": "#coverage",
+              "display": "Humana"
+            }
+          }
+        ],
+        "item": [
+          {
+            "sequence": 1,
+            "category": {
+              "coding": [
+                {
+                  "system": "https://bluebutton.cms.gov/resources/variables/line_cms_type_srvc_cd",
+                  "code": "1",
+                  "display": "Medical care"
+                }
+              ]
+            },
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "185349003",
+                  "display": "Encounter for check up (procedure)"
+                }
+              ],
+              "text": "Encounter for check up (procedure)"
+            },
+            "servicedPeriod": {
+              "start": "1995-01-24T01:59:32+00:00",
+              "end": "1995-01-24T03:03:43+00:00"
+            },
+            "locationCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/ex-serviceplace",
+                  "code": "21",
+                  "display": "Inpatient Hospital"
+                }
+              ]
+            },
+            "encounter": [
+              {
+                "reference": "Encounter/619"
+              }
+            ]
+          },
+          {
+            "sequence": 2,
+            "diagnosisSequence": [
+              1
+            ],
+            "category": {
+              "coding": [
+                {
+                  "system": "https://bluebutton.cms.gov/resources/variables/line_cms_type_srvc_cd",
+                  "code": "1",
+                  "display": "Medical care"
+                }
+              ]
+            },
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "707251008",
+                  "display": "Generalised chronic periodontitis"
+                }
+              ],
+              "text": "Generalised chronic periodontitis"
+            },
+            "servicedPeriod": {
+              "start": "1995-01-24T01:59:32+00:00",
+              "end": "1995-01-24T03:03:43+00:00"
+            },
+            "locationCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/ex-serviceplace",
+                  "code": "21",
+                  "display": "Inpatient Hospital"
+                }
+              ]
+            }
+          }
+        ],
+        "total": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 97.99,
+              "currency": "USD"
+            }
+          }
+        ],
+        "payment": {
+          "amount": {
+            "value": 0.0,
+            "currency": "USD"
+          }
+        }
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://localhost:8080/fhir/ExplanationOfBenefit/630",
+      "resource": {
+        "resourceType": "ExplanationOfBenefit",
+        "id": "630",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-11-04T02:23:31.146+00:00",
+          "source": "#i5RvnCxgWwkLp0gM"
+        },
+        "contained": [
+          {
+            "resourceType": "ServiceRequest",
+            "id": "referral",
+            "status": "completed",
+            "intent": "order",
+            "subject": {
+              "reference": "Patient/618"
+            },
+            "requester": {
+              "reference": "Practitioner/448"
+            },
+            "performer": [
+              {
+                "reference": "Practitioner/448"
+              }
+            ]
+          },
+          {
+            "resourceType": "Coverage",
+            "id": "coverage",
+            "status": "active",
+            "type": {
+              "text": "Humana"
+            },
+            "beneficiary": {
+              "reference": "Patient/618"
+            },
+            "payor": [
+              {
+                "display": "Humana"
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "system": "https://bluebutton.cms.gov/resources/variables/clm_id",
+            "value": "922fb35e-148d-9e82-05dd-6ea71bcdc943"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/identifier/claim-group",
+            "value": "99999999999"
+          }
+        ],
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+              "code": "professional"
+            }
+          ]
+        },
+        "use": "claim",
+        "patient": {
+          "reference": "Patient/618"
+        },
+        "billablePeriod": {
+          "start": "2005-03-15T02:47:43+00:00",
+          "end": "2006-03-15T02:47:43+00:00"
+        },
+        "created": "2005-03-15T02:47:43+00:00",
+        "insurer": {
+          "display": "Humana"
+        },
+        "provider": {
+          "reference": "Practitioner/448"
+        },
+        "referral": {
+          "reference": "#referral"
+        },
+        "facility": {
+          "reference": "Location/140",
+          "display": "SUNRISE HEALTHCARE LLC"
+        },
+        "claim": {
+          "reference": "Claim/629"
+        },
+        "outcome": "complete",
+        "careTeam": [
+          {
+            "sequence": 1,
+            "provider": {
+              "reference": "Practitioner/448"
+            },
+            "role": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+                  "code": "primary",
+                  "display": "Primary provider"
+                }
+              ]
+            }
+          }
+        ],
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisReference": {
+              "reference": "Condition/626"
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                    "code": "principal"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "insurance": [
+          {
+            "focal": true,
+            "coverage": {
+              "reference": "#coverage",
+              "display": "Humana"
+            }
+          }
+        ],
+        "item": [
+          {
+            "sequence": 1,
+            "category": {
+              "coding": [
+                {
+                  "system": "https://bluebutton.cms.gov/resources/variables/line_cms_type_srvc_cd",
+                  "code": "1",
+                  "display": "Medical care"
+                }
+              ]
+            },
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "162673000",
+                  "display": "General examination of patient (procedure)"
+                }
+              ],
+              "text": "General examination of patient (procedure)"
+            },
+            "servicedPeriod": {
+              "start": "2005-03-15T01:59:32+00:00",
+              "end": "2005-03-15T02:47:43+00:00"
+            },
+            "locationCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/ex-serviceplace",
+                  "code": "19",
+                  "display": "Off Campus-Outpatient Hospital"
+                }
+              ]
+            },
+            "encounter": [
+              {
+                "reference": "Encounter/625"
+              }
+            ]
+          },
+          {
+            "sequence": 2,
+            "diagnosisSequence": [
+              1
+            ],
+            "category": {
+              "coding": [
+                {
+                  "system": "https://bluebutton.cms.gov/resources/variables/line_cms_type_srvc_cd",
+                  "code": "1",
+                  "display": "Medical care"
+                }
+              ]
+            },
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "224299000",
+                  "display": "Received higher education (finding)"
+                }
+              ],
+              "text": "Received higher education (finding)"
+            },
+            "servicedPeriod": {
+              "start": "2005-03-15T01:59:32+00:00",
+              "end": "2005-03-15T02:47:43+00:00"
+            },
+            "locationCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/ex-serviceplace",
+                  "code": "19",
+                  "display": "Off Campus-Outpatient Hospital"
+                }
+              ]
+            }
+          }
+        ],
+        "total": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 1345.96,
+              "currency": "USD"
+            }
+          }
+        ],
+        "payment": {
+          "amount": {
+            "value": 0.0,
+            "currency": "USD"
+          }
+        }
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://localhost:8080/fhir/ExplanationOfBenefit/636",
+      "resource": {
+        "resourceType": "ExplanationOfBenefit",
+        "id": "636",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-11-04T02:23:31.146+00:00",
+          "source": "#i5RvnCxgWwkLp0gM"
+        },
+        "contained": [
+          {
+            "resourceType": "ServiceRequest",
+            "id": "referral",
+            "status": "completed",
+            "intent": "order",
+            "subject": {
+              "reference": "Patient/618"
+            },
+            "requester": {
+              "reference": "Practitioner/536"
+            },
+            "performer": [
+              {
+                "reference": "Practitioner/536"
+              }
+            ]
+          },
+          {
+            "resourceType": "Coverage",
+            "id": "coverage",
+            "status": "active",
+            "type": {
+              "text": "Humana"
+            },
+            "beneficiary": {
+              "reference": "Patient/618"
+            },
+            "payor": [
+              {
+                "display": "Humana"
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "system": "https://bluebutton.cms.gov/resources/variables/clm_id",
+            "value": "922fb35e-148d-9e82-02db-f551daac7fa1"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/identifier/claim-group",
+            "value": "99999999999"
+          }
+        ],
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+              "code": "professional"
+            }
+          ]
+        },
+        "use": "claim",
+        "patient": {
+          "reference": "Patient/618"
+        },
+        "billablePeriod": {
+          "start": "2013-09-10T02:42:42+00:00",
+          "end": "2014-09-10T02:42:42+00:00"
+        },
+        "created": "2013-09-10T02:42:42+00:00",
+        "insurer": {
+          "display": "Humana"
+        },
+        "provider": {
+          "reference": "Practitioner/536"
+        },
+        "referral": {
+          "reference": "#referral"
+        },
+        "facility": {
+          "reference": "Location/228",
+          "display": "WHITTIER REHABILITATION HOSPITAL - BRADFORD"
+        },
+        "claim": {
+          "reference": "Claim/635"
+        },
+        "outcome": "complete",
+        "careTeam": [
+          {
+            "sequence": 1,
+            "provider": {
+              "reference": "Practitioner/536"
+            },
+            "role": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+                  "code": "primary",
+                  "display": "Primary provider"
+                }
+              ]
+            }
+          }
+        ],
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisReference": {
+              "reference": "Condition/632"
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                    "code": "principal"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "insurance": [
+          {
+            "focal": true,
+            "coverage": {
+              "reference": "#coverage",
+              "display": "Humana"
+            }
+          }
+        ],
+        "item": [
+          {
+            "sequence": 1,
+            "category": {
+              "coding": [
+                {
+                  "system": "https://bluebutton.cms.gov/resources/variables/line_cms_type_srvc_cd",
+                  "code": "1",
+                  "display": "Medical care"
+                }
+              ]
+            },
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "185349003",
+                  "display": "Encounter for check up (procedure)"
+                }
+              ],
+              "text": "Encounter for check up (procedure)"
+            },
+            "servicedPeriod": {
+              "start": "2013-09-10T01:59:32+00:00",
+              "end": "2013-09-10T02:42:42+00:00"
+            },
+            "locationCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/ex-serviceplace",
+                  "code": "21",
+                  "display": "Inpatient Hospital"
+                }
+              ]
+            },
+            "encounter": [
+              {
+                "reference": "Encounter/631"
+              }
+            ]
+          },
+          {
+            "sequence": 2,
+            "diagnosisSequence": [
+              1
+            ],
+            "category": {
+              "coding": [
+                {
+                  "system": "https://bluebutton.cms.gov/resources/variables/line_cms_type_srvc_cd",
+                  "code": "1",
+                  "display": "Medical care"
+                }
+              ]
+            },
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "160903007",
+                  "display": "Full-time employment (finding)"
+                }
+              ],
+              "text": "Full-time employment (finding)"
+            },
+            "servicedPeriod": {
+              "start": "2013-09-10T01:59:32+00:00",
+              "end": "2013-09-10T02:42:42+00:00"
+            },
+            "locationCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/ex-serviceplace",
+                  "code": "21",
+                  "display": "Inpatient Hospital"
+                }
+              ]
+            }
+          }
+        ],
+        "total": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 1515.75,
+              "currency": "USD"
+            }
+          }
+        ],
+        "payment": {
+          "amount": {
+            "value": 0.0,
+            "currency": "USD"
+          }
+        }
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://localhost:8080/fhir/ExplanationOfBenefit/642",
+      "resource": {
+        "resourceType": "ExplanationOfBenefit",
+        "id": "642",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-11-04T02:23:31.146+00:00",
+          "source": "#i5RvnCxgWwkLp0gM"
+        },
+        "contained": [
+          {
+            "resourceType": "ServiceRequest",
+            "id": "referral",
+            "status": "completed",
+            "intent": "order",
+            "subject": {
+              "reference": "Patient/618"
+            },
+            "requester": {
+              "reference": "Practitioner/536"
+            },
+            "performer": [
+              {
+                "reference": "Practitioner/536"
+              }
+            ]
+          },
+          {
+            "resourceType": "Coverage",
+            "id": "coverage",
+            "status": "active",
+            "type": {
+              "text": "Humana"
+            },
+            "beneficiary": {
+              "reference": "Patient/618"
+            },
+            "payor": [
+              {
+                "display": "Humana"
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "system": "https://bluebutton.cms.gov/resources/variables/clm_id",
+            "value": "922fb35e-148d-9e82-9331-c1a3a644f18b"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/identifier/claim-group",
+            "value": "99999999999"
+          }
+        ],
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+              "code": "professional"
+            }
+          ]
+        },
+        "use": "claim",
+        "patient": {
+          "reference": "Patient/618"
+        },
+        "billablePeriod": {
+          "start": "2016-05-03T02:49:21+00:00",
+          "end": "2017-05-03T02:49:21+00:00"
+        },
+        "created": "2016-05-03T02:49:21+00:00",
+        "insurer": {
+          "display": "Humana"
+        },
+        "provider": {
+          "reference": "Practitioner/536"
+        },
+        "referral": {
+          "reference": "#referral"
+        },
+        "facility": {
+          "reference": "Location/228",
+          "display": "WHITTIER REHABILITATION HOSPITAL - BRADFORD"
+        },
+        "claim": {
+          "reference": "Claim/641"
+        },
+        "outcome": "complete",
+        "careTeam": [
+          {
+            "sequence": 1,
+            "provider": {
+              "reference": "Practitioner/536"
+            },
+            "role": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+                  "code": "primary",
+                  "display": "Primary provider"
+                }
+              ]
+            }
+          }
+        ],
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisReference": {
+              "reference": "Condition/638"
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                    "code": "principal"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "insurance": [
+          {
+            "focal": true,
+            "coverage": {
+              "reference": "#coverage",
+              "display": "Humana"
+            }
+          }
+        ],
+        "item": [
+          {
+            "sequence": 1,
+            "category": {
+              "coding": [
+                {
+                  "system": "https://bluebutton.cms.gov/resources/variables/line_cms_type_srvc_cd",
+                  "code": "1",
+                  "display": "Medical care"
+                }
+              ]
+            },
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "185349003",
+                  "display": "Encounter for check up (procedure)"
+                }
+              ],
+              "text": "Encounter for check up (procedure)"
+            },
+            "servicedPeriod": {
+              "start": "2016-05-03T01:59:32+00:00",
+              "end": "2016-05-03T02:49:21+00:00"
+            },
+            "locationCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/ex-serviceplace",
+                  "code": "21",
+                  "display": "Inpatient Hospital"
+                }
+              ]
+            },
+            "encounter": [
+              {
+                "reference": "Encounter/637"
+              }
+            ]
+          },
+          {
+            "sequence": 2,
+            "diagnosisSequence": [
+              1
+            ],
+            "category": {
+              "coding": [
+                {
+                  "system": "https://bluebutton.cms.gov/resources/variables/line_cms_type_srvc_cd",
+                  "code": "1",
+                  "display": "Medical care"
+                }
+              ]
+            },
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "73595000",
+                  "display": "Stress (finding)"
+                }
+              ],
+              "text": "Stress (finding)"
+            },
+            "servicedPeriod": {
+              "start": "2016-05-03T01:59:32+00:00",
+              "end": "2016-05-03T02:49:21+00:00"
+            },
+            "locationCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/ex-serviceplace",
+                  "code": "21",
+                  "display": "Inpatient Hospital"
+                }
+              ]
+            }
+          }
+        ],
+        "total": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 910.41,
+              "currency": "USD"
+            }
+          }
+        ],
+        "payment": {
+          "amount": {
+            "value": 0.0,
+            "currency": "USD"
+          }
+        }
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://localhost:8080/fhir/ExplanationOfBenefit/649",
+      "resource": {
+        "resourceType": "ExplanationOfBenefit",
+        "id": "649",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-11-04T02:23:31.146+00:00",
+          "source": "#i5RvnCxgWwkLp0gM"
+        },
+        "contained": [
+          {
+            "resourceType": "ServiceRequest",
+            "id": "referral",
+            "status": "completed",
+            "intent": "order",
+            "subject": {
+              "reference": "Patient/618"
+            },
+            "requester": {
+              "reference": "Practitioner/536"
+            },
+            "performer": [
+              {
+                "reference": "Practitioner/536"
+              }
+            ]
+          },
+          {
+            "resourceType": "Coverage",
+            "id": "coverage",
+            "status": "active",
+            "type": {
+              "text": "Humana"
+            },
+            "beneficiary": {
+              "reference": "Patient/618"
+            },
+            "payor": [
+              {
+                "display": "Humana"
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "system": "https://bluebutton.cms.gov/resources/variables/clm_id",
+            "value": "922fb35e-148d-9e82-c9a5-817fefd0340f"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/identifier/claim-group",
+            "value": "99999999999"
+          }
+        ],
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+              "code": "professional"
+            }
+          ]
+        },
+        "use": "claim",
+        "patient": {
+          "reference": "Patient/618"
+        },
+        "billablePeriod": {
+          "start": "2016-05-10T02:14:32+00:00",
+          "end": "2017-05-10T02:14:32+00:00"
+        },
+        "created": "2016-05-10T02:14:32+00:00",
+        "insurer": {
+          "display": "Humana"
+        },
+        "provider": {
+          "reference": "Practitioner/536"
+        },
+        "referral": {
+          "reference": "#referral"
+        },
+        "facility": {
+          "reference": "Location/228",
+          "display": "WHITTIER REHABILITATION HOSPITAL - BRADFORD"
+        },
+        "claim": {
+          "reference": "Claim/648"
+        },
+        "outcome": "complete",
+        "careTeam": [
+          {
+            "sequence": 1,
+            "provider": {
+              "reference": "Practitioner/536"
+            },
+            "role": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+                  "code": "primary",
+                  "display": "Primary provider"
+                }
+              ]
+            }
+          }
+        ],
+        "insurance": [
+          {
+            "focal": true,
+            "coverage": {
+              "reference": "#coverage",
+              "display": "Humana"
+            }
+          }
+        ],
+        "item": [
+          {
+            "sequence": 1,
+            "category": {
+              "coding": [
+                {
+                  "system": "https://bluebutton.cms.gov/resources/variables/line_cms_type_srvc_cd",
+                  "code": "1",
+                  "display": "Medical care"
+                }
+              ]
+            },
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "185345009",
+                  "display": "Encounter for symptom (procedure)"
+                }
+              ],
+              "text": "Encounter for symptom (procedure)"
+            },
+            "servicedPeriod": {
+              "start": "2016-05-10T01:59:32+00:00",
+              "end": "2016-05-10T02:14:32+00:00"
+            },
+            "locationCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/ex-serviceplace",
+                  "code": "21",
+                  "display": "Inpatient Hospital"
+                }
+              ]
+            },
+            "encounter": [
+              {
+                "reference": "Encounter/643"
+              }
+            ]
+          }
+        ],
+        "total": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 187.19,
+              "currency": "USD"
+            }
+          }
+        ],
+        "payment": {
+          "amount": {
+            "value": 0.0,
+            "currency": "USD"
+          }
+        }
+      },
+      "search": {
+        "mode": "match"
+      }
+    }
+  ]
+}
